@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MenuMastery</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+
+  <!--barra de navegación-->
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="imagenes/logo1.webp" alt="Logo MenuMastery" width="45" height="50" />
+      </div>
+      <ul class="nav-links">
+        <li><a href="#" data-section="inicio">Inicio</a></li>
+        <li><a href="#" data-section="menu">Menú</a></li>
+        <li><a href="#" data-section="reservas">Reservas</a></li>
+        <li><a href="#" data-section="contacto">Contacto</a></li>
+      </ul>
+      <div class="icons">
+        <a href="#" id="carritoToggle">
+          <img src="imagenes/carrito.webp" alt="Carrito" class="icon" width="23" height="23" >
+        </a>
+        <a href="#usuario" id="usuarioIcon">
+          <img src="imagenes/usuario.webp" alt="Usuario" class="icon" width="23" height="23">
+        </a>
+      </div>
+    </nav>
+  </header>
+<section id="inicio" class="section">
+  <!--carrusel-->   
+  <section class="hero-carousel">
+    <div class="carousel">
+      <div class="slide active">
+        <img src="imagenes/restau.jpg" alt="Imagen 1">
+        <div class="caption">
+          <h1>¡Bienvenidos a MenuMastery!</h1>
+          <p>El mejor lugar para disfrutar gastronomía única.</p>
+          <button onclick="handleOrder()" id="ordenar">Ordenar ahora</button>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="imagenes/th.jpeg" alt="Imagen 2">
+        <div class="caption">
+          <h1>¡Bienvenidos a MenuMastery!</h1>
+          <p>El mejor lugar para disfrutar gastronomía única.</p>
+          <button>Ordenar ahora</button>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="imagenes/restau.jpg" alt="Imagen 3">
+        <div class="caption">
+          <h1>¡Bienvenidos a MenuMastery!</h1>
+          <p>El mejor lugar para disfrutar gastronomía única.</p>
+          <button>Ordenar ahora</button>
+        </div>
+      </div>
+      <!--botones -->
+      <div class="carousel-nav">
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+      </div>
+    <!-- puntos de navegación -->
+      <div class="carousel-dots">
+        <span class="dot active" onclick="goToSlide(0)"></span>
+        <span class="dot" onclick="goToSlide(1)"></span>
+        <span class="dot" onclick="goToSlide(2)"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección Oferta Especial y Mapa -->
+  <section class="oferta-contacto">
+    <div class="contenedor">
+
+      <!-- Mapa y Ubicación -->
+      <div class="mapa">
+        <img src="imagenes/direccion.jpg" alt="Mapa ubicación" />
+        <p><a href="https://maps.google.com" target="_blank">43, Tesalia, Huila</a></p>
+      </div>
+  
+      <!-- Oferta Especial -->
+      <div class="oferta">
+        <h2>Oferta especial</h2>
+        <p>Regístrate y obtén</p>
+        <h3>20 % descuento</h3>
+        <button class="btn-ordenar">Ordenar ahora</button>
+      </div>
+  
+      <!-- Caja para publicidad o contenido -->
+      <div class="caja-publicidad">
+        <img src="imagenes/pubicidad.jpg" alt="Oferta especial">
+      </div>
+    </div>
+  
+    <!-- Footer de contacto -->
+    <footer class="footer-contacto">
+      <div class="info-contacto">
+        <p><img src="imagenes/cell.webp" alt="Teléfono" /> 315 5522048</p>
+      </div>
+      <div class="descarga">
+        <p>Disponible en:</p>
+        <ul>
+          <li><a href="#"> <img src="imagenes/apple_store.webp" alt="Apple Store" /></a></li>
+          <li><a href="#"> <img src="imagenes/play_store.webp" alt="Play Store" /></a></li>
+        </ul>
+      </div>
+      <div class="redes-sociales">
+        <p>Redes sociales:</p>
+        <ul>
+          <li><a href="#"><img src="imagenes/fb_icon-icons.webp" alt="Facebook" /></a></li>
+          <li><a href="#"><img src="imagenes/Instagram_New_icon-icons.webp" alt="Instagram" /></a></li>
+          <li><a href="#"><img src="imagenes/whatsapp_icon-icons.webp" alt="WhatsApp" /></a></li>
+        </ul>
+      </div>
+    </footer>
+ </section>
+</section>
+
+
+<!-- Sección Menú -->
+<section id="menu" class="section hidden">
+  <aside class="menu-sidebar">
+    <div class="menu-logo">
+      <img src="imagenes/cutlery-1_icon-icons.com_62936.png" alt="Logo Menú">
+    </div> 
+    <div class="menu-label">MENÚ</div>
+    
+    <div class="menu-decorations">
+      <div class="circle"></div>
+      <div class="circle filled"></div>
+    </div>
+
+    <div class="menu-chef">
+      <img src="imagenes/chef_87588.png" alt="logo del chef">
+    </div>
+  </aside>
+
+  <div class="menu-content">
+    <div class="menu-categories">
+      <button class="category-button" data-category="todo">Todo</button>
+      <button class="category-button" data-category="entradas">Entradas</button>
+      <button class="category-button" data-category="adiciones">Adiciones</button>
+      <button class="category-button" data-category="platos-fuertes">Platos fuertes</button>
+      <button class="category-button" data-category="comidas-rapidas">Comidas rápidas</button>
+    </div>
+
+    <div class="menu-items">
+      <!-- Ejemplo de un elemento del menú -->
+      <div class="menu-item">
+        <img src="imagenes/th.jpeg" alt="Limonada">
+        <h4>Limonada Cerezada</h4>
+        <p>$7.000</p>
+        <div class="rating">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="far fa-star"></i>
+        </div>
+        <button class="order-button">Ordenar</button>
+      </div>
+
+      <div class="menu-item">
+        <img src="imagenes/th.jpeg" alt="Limonada">
+        <h4>Limonada Cerezada</h4>
+        <p>$7.000</p>
+        <div class="rating">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="far fa-star"></i>
+        </div>
+        <button class="order-button">Ordenar</button>
+      </div>
+
+      <div class="menu-item">
+        <img src="imagenes/th.jpeg" alt="Limonada">
+        <h4>Limonada Cerezada</h4>
+        <p>$7.000</p>
+        <div class="rating">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="far fa-star"></i>
+        </div>
+        <button class="order-button">Ordenar</button>
+      </div>
+      <div class="menu-item">
+        <img src="imagenes/th.jpeg" alt="Limonada">
+        <h4>Limonada Cerezada</h4>
+        <p>$7.000</p>
+        <div class="rating">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="far fa-star"></i>
+        </div>
+        <button class="order-button">Ordenar</button>
+      </div>
+
+      <div class="menu-item">
+        <img src="imagenes/th.jpeg" alt="Limonada">
+        <h4>Limonada Cerezada</h4>
+        <p>$7.000</p>
+        <div class="rating">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="far fa-star"></i>
+        </div>
+        <button class="order-button">Ordenar</button>
+      </div>
+
+      <div class="menu-item">
+        <img src="imagenes/th.jpeg" alt="Limonada">
+        <h4>Limonada Cerezada</h4>
+        <p>$7.000</p>
+        <div class="rating">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="far fa-star"></i>
+        </div>
+        <button class="order-button">Ordenar</button>
+      </div>
+      <!-- Repite para más elementos -->
+    </div>
+  </div>
+</section>
+
+<!--reservas-->
+<section id="reservas" class="section hidden">
+  <div class="container">
+    <h2 class="title">RESERVAR</h2>
+    <p>Elige la fecha y hora para disfrutar de una experiencia gastronómica inolvidable.</p>
+
+    <form id="reservation-form" class="reservation-form">
+      <!-- Fecha -->
+      <div class="form-group">
+        <label for="fecha">Fecha</label>
+        <input type="date" id="fecha" name="fecha" required>
+      </div>
+
+      <!-- Hora -->
+      <div class="form-group">
+        <label for="hora">Hora</label>
+        <input type="time" id="hora" name="hora" required>
+      </div>
+
+      <!-- Cantidad de personas -->
+      <div class="form-group">
+        <label for="cantidad-personas">Cantidad de personas</label>
+        <select id="cantidad-personas" name="cantidad-personas" required>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+        </select>
+        <p>Si el número de personas es mayor a 6, ingrésalo aquí:</p>
+        <input type="number" id="otras-personas" name="otras-personas" min="7" placeholder="Más de 6 personas">
+      </div>
+
+      <!-- Botón de confirmar -->
+      <div class="form-group">
+        <button type="submit" class="btn-confirmar">Confirmar</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!--contactos-->
+<section id="contacto" class="section hidden">
+  <h1 class="titulo-principal">CONTACTO</h1>
+  <div class="informacion-contacto">
+    <div class="direccion">
+      <h2>
+        Quinta de Santa María
+        <span class="stars">&#9733;&#9733;&#9733;&#9733;&#189;</span>
+        <span class="rating">4.6</span>
+      </h2>
+      <ul>
+        <li><i class="fas fa-map-marker-alt"></i> 43, Tesalia, Huila</li>
+        <li><i class="fas fa-clock"></i> Abierto: 11:00 am - 9:00 pm</li>
+        <li><i class="fas fa-money-bill-wave"></i> $20,000 - $30,000 por persona</li>
+        <li><i class="fas fa-swimming-pool"></i> Servicio adicional de piscina</li>
+      </ul>
+      <h2>
+        Contactenos
+        <div class="social-icons">
+          <a href="https://wa.me/tuNumero" target="_blank" class="social-icon">
+            <i class="fab fa-whatsapp"></i> WhatsApp
+          </a>
+          <a href="https://www.instagram.com/tuUsuario" target="_blank" class="social-icon">
+            <i class="fab fa-instagram"></i> Instagram
+          </a>
+          <a href="https://twitter.com/tuUsuario" target="_blank" class="social-icon">
+            <i class="fab fa-twitter"></i> Twitter
+          </a>
+          <a href="https://www.facebook.com/tuUsuario" target="_blank" class="social-icon">
+            <i class="fab fa-facebook"></i> Facebook
+          </a>
+        </div>
+      </h2>
+      <div style="flex-grow: 1;"></div>
+    </div>
+    
+     <!--mapa-->
+    <div class="mapa">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3975.5401947630666!2d-75.46713557567535!3d2.545238978146152!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3e2d08eaf5a25b%3A0x408cc2dff7f158de!2sTesalia%2C%20Huila!5e0!3m2!1ses!2sco!4v1699368472869!5m2!1ses!2sco" 
+        width="100%" 
+        height="300" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+   
+    <div class="reseñas-section">
+      <h2>Reseñas</h2>
+      <div class="review">
+        <p>
+          <strong>Nombre</strong>
+          <span class="stars">&#9733;&#9733;&#9733;&#9733;&#189;</span>
+          <span class="rating">4.6</span>
+        </p>
+        <p>
+          El sitio es agradable, buena música, buena atención. Mi plato estaba un poco salado, y
+          de más.
+        </p>
+      </div>
+
+      <form class="review-form">
+        <h3>¿Cómo valoras al restaurante?</h3>
+        <div class="stars-input">
+          <input type="radio" id="star5" name="rating" value="5" />
+          <label for="star5">&#9733;</label>
+          <input type="radio" id="star4" name="rating" value="4" />
+          <label for="star4">&#9733;</label>
+          <input type="radio" id="star3" name="rating" value="3" />
+          <label for="star3">&#9733;</label>
+          <input type="radio" id="star2" name="rating" value="2" />
+          <label for="star2">&#9733;</label>
+          <input type="radio" id="star1" name="rating" value="1" />
+          <label for="star1">&#9733;</label>
+        </div>
+        <label for="review-text">¡Cuéntanos tu experiencia!</label>
+        <textarea id="review-text" placeholder="Escribe tu experiencia aquí..." required></textarea>
+        <button type="submit">Enviar</button> 
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Carrito de compras -->
+<section id="cont-carrito-section">
+  <div id="carrito">
+    <button id="closeCarrito" class="close-btn">X</button>
+  </div>
+
+  <!-- Contenido principal (dos columnas) -->
+  <div class="carrito-content">
+    <div class="carrito-header">
+      <h2>Historial de compras</h2>
+      <div class="compra">
+        <p>Producto: Café</p>
+        <p>Fecha: 07/01/2025</p>
+        <p>Cantidad: 2</p>
+        <p>Total: $10.00</p>
+      </div>
+      <div class="compra">
+        <p>Producto: Pan</p>
+        <p>Fecha: 05/01/2025</p>
+        <p>Cantidad: 3</p>
+        <p>Total: $6.00</p>
+      </div>
+    </div>
+    <div class="pago-section">
+      <h2>Resumen del Pedido</h2>
+      <div id="productosCarrito"></div>
+      <div id="totalCarrito">Total: $0.00</div>
+      <div class="pago">
+        <button onclick="processPayment('en línea')">Pagar en línea</button>
+        <button onclick="processPayment('en efectivo')">Pagar en efectivo</button>
+      </div>
+    </div>
+  </div> 
+  
+  <!-- Productos sugeridos -->
+  <div class="productos-sugeridos">
+    <h3>Productos sugeridos</h3>
+    <div class="producto-sugerido">
+      <img src="imagenes/producto 1.jpeg" alt="producto 1">
+      <p>Producto: Té verde</p>
+      <p>Precio: $5.000</p>
+      <button onclick="addSuggestedItem('Té verde', 5.00)">Añadir al carrito</button>
+    </div>
+    <div class="producto-sugerido">
+      <img src="imagenes/producto2.jpg" alt="Producto sugerido 2">
+      <p>Producto: Galletas</p>
+      <p>Precio: $3.50</p>
+      <button onclick="addSuggestedItem('Galletas', 3.50)">Añadir al carrito</button>
+    </div>
+  </div>
+</section>
+
+<!--login-->  
+<section id="login-section">
+  <div id="login-box">
+    <button id="close-login">&times;</button> <!-- La "X" para cerrar -->
+    <h2>Iniciar sesión</h2>
+    
+    <!-- Formulario de login -->
+    <form id="login-form">
+      <label for="username">correo:</label>
+      <input type="email" id="username" name="username" placeholder="Ingresa tu usuario" required>
+  
+      <label for="password">Contraseña:</label>
+      <input type="password" id="password" name="password" placeholder="Ingresa tu contraseña" required>
+  
+      <button type="submit">Ingresar</button>
+    </form>
+
+    <!-- Recuperar contraseña -->
+    <div id="recover-password">
+      <p><a href="#">¿Olvidaste tu contraseña?</a></p>
+    </div>
+    
+    <!-- Botones para inicio de sesión con Google y Apple -->
+    <div id="social-login">
+      <button id="google-login">
+        <i class="fab fa-google"></i> Iniciar sesión con Google
+      </button>
+      <button id="apple-login">
+        <i class="fab fa-apple"></i> Iniciar sesión con Apple
+      </button>
+    </div>
+
+    <!--  Crear cuenta -->
+    <p id="no-account">¿No tienes cuenta? <a href="#" id="register-link">Regístrate aquí</a></p>
+
+    <!-- Error de login -->
+    <p id="login-error" style="color: red; display: none;">Usuario o contraseña incorrectos. Intenta de nuevo.</p>
+  </div>
+</section>
+
+<!-- Formulario de registro -->
+<section id="create-account-section">
+  <!-- Contenedor del formulario -->
+  <div id="create-account-box">
+    <h2>Crear cuenta</h2>
+    <button id="close-create-account">&times;</button>
+    <form id="create-account-form" action="registro.php" method="POST" onsubmit="return validarFormulario()">
+      <label for="new-name">Nombre de usuario:</label>
+      <input type="text" id="new-name" name="new-username" placeholder="Elige un nombre de usuario" required>
+
+      <label for="new-email">Correo electronico:</label>
+      <input type="email" id="new-email" name="new-email" placeholder="Ingresa tu correo" required>
+
+      <label for="confirm-email">Confirmar correo electronico:</label>
+      <input type="email" id="confirm-email" name="confirm-email" placeholder="Rectifica tu correo" required>
+
+      <label for="new-password">Contraseña:</label>
+      <input type="password" id="new-password" name="new-password" placeholder="Crea una contraseña" required>
+        
+      <label for="confirm-password">Repita su contraseña:</label>
+      <input type="password" id="confirm-password" name="confirm-password" placeholder="Repita la contraseña" required>
+
+      <button type="submit">Crear cuenta</button>
+    </form>
+  </div>
+</section>
+
+<!--interfaz administracion-->>
+<section id="administracion">
+
+
+</section>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+  <script src="script.js"></script>   
+</body>
