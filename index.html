@@ -10,28 +10,29 @@
 </head>
 <body>
 
-<!--barra de navegación-->
-<header>
-  <nav class="navbar">
-    <div class="logo">
-      <img src="imagenes/logo1.webp" alt="Logo MenuMastery" width="45" height="50" />
-    </div>
-    <ul class="nav-links">
-      <li><a href="#" data-section="inicio">Inicio</a></li>
-      <li><a href="#" data-section="menu">Menú</a></li>
-      <li><a href="#" data-section="reservas">Reservas</a></li>
-      <li><a href="#" data-section="contacto">Contacto</a></li>
-    </ul>
-    <div class="icons">
-      <a href="#" id="carritoToggle">
-        <img src="imagenes/carrito.webp" alt="Carrito" class="icon" width="23" height="23" >
-      </a>
-      <a href="#usuario" id="usuarioIcon">
-        <img src="imagenes/usuario.webp" alt="Usuario" class="icon" width="23" height="23">
-      </a>
-    </div>
-  </nav>
-</header>
+  <!--barra de navegación-->
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="imagenes/logo1.webp" alt="Logo MenuMastery" width="45" height="50" />
+      </div>
+      <ul class="nav-links">
+        <li><a href="#" data-section="inicio">Inicio</a></li>
+        <li><a href="#" data-section="menu">Menú</a></li>
+        <li><a href="#" data-section="reservas">Reservas</a></li>
+        <li><a href="#" data-section="contacto">Contacto</a></li>
+      </ul>
+      <div class="icons">
+        <a href="#" id="carritoToggle">
+          <img src="imagenes/carrito.webp" alt="Carrito" class="icon" width="23" height="23" >
+        </a>
+        <a href="#usuario" id="usuarioIcon">
+          <img src="imagenes/usuario.webp" alt="Usuario" class="icon" width="23" height="23">
+        </a>
+      </div>
+    </nav>
+  </header>
+<section id="inicio" class="section">
   <!--carrusel-->   
   <section class="hero-carousel">
     <div class="carousel">
@@ -65,61 +66,57 @@
         <button class="next">&#10095;</button>
       </div>
     <!-- puntos de navegación -->
-      <div class="carousel-dots">
-        <span class="dot active" onclick="goToSlide(0)"></span>
-        <span class="dot" onclick="goToSlide(1)"></span>
-        <span class="dot" onclick="goToSlide(2)"></span>
-      </div>
+    <div class="carousel-dots">
+      <span class="dot active" onclick="goToSlide(0)"></span>
+      <span class="dot" onclick="goToSlide(1)"></span>
+      <span class="dot" onclick="goToSlide(2)"></span>
     </div>
-  </section>
-
+  </div>
   <!-- Sección Oferta Especial y Mapa -->
-  <section class="oferta-contacto">
-    <div class="contenedor">
-
-      <!-- Mapa y Ubicación -->
-      <div class="mapa">
-        <img src="imagenes/direccion.jpg" alt="Mapa ubicación" />
-        <p><a href="https://maps.google.com" target="_blank">43, Tesalia, Huila</a></p>
-      </div>
-  
-      <!-- Oferta Especial -->
-      <div class="oferta">
-        <h2>Oferta especial</h2>
-        <p>Regístrate y obtén</p>
-        <h3>20 % descuento</h3>
-        <button class="btn-ordenar">Ordenar ahora</button>
-      </div>
-  
-      <!-- Caja para publicidad o contenido -->
-      <div class="caja-publicidad">
-        <img src="imagenes/pubicidad.jpg" alt="Oferta especial">
-      </div>
+  <div class="contenedor">
+    <!-- Mapa y Ubicación -->
+    <div class="mapa">
+      <img src="imagenes/direccion.jpg" alt="Mapa ubicación" />
+      <p><a href="https://maps.google.com" target="_blank">43, Tesalia, Huila</a></p>
     </div>
+  
+    <!-- Oferta Especial -->
+    <div class="oferta">
+      <h2>Oferta especial</h2>
+      <p>Regístrate y obtén</p>
+      <h3>20 % descuento</h3>
+      <button class="btn-ordenar">Ordenar ahora</button>
+    </div>
+  
+    <!-- Caja para publicidad o contenido -->
+    <div class="caja-publicidad">
+      <img src="imagenes/pubicidad.jpg" alt="Oferta especial">
+    </div>
+  </div>
   
     <!-- Footer de contacto -->
-    <footer class="footer-contacto">
-      <div class="info-contacto">
-        <p><img src="imagenes/cell.webp" alt="Teléfono" /> 315 5522048</p>
-      </div>
-      <div class="descarga">
-        <p>Disponible en:</p>
-        <ul>
-          <li><a href="#"> <img src="imagenes/apple_store.webp" alt="Apple Store" /></a></li>
-          <li><a href="#"> <img src="imagenes/play_store.webp" alt="Play Store" /></a></li>
-        </ul>
-      </div>
-      <div class="redes-sociales">
-        <p>Redes sociales:</p>
-        <ul>
-          <li><a href="#"><img src="imagenes/fb_icon-icons.webp" alt="Facebook" /></a></li>
-          <li><a href="#"><img src="imagenes/Instagram_New_icon-icons.webp" alt="Instagram" /></a></li>
-          <li><a href="#"><img src="imagenes/whatsapp_icon-icons.webp" alt="WhatsApp" /></a></li>
-        </ul>
-      </div>
-    </footer>
- </section>
+  <footer class="footer-contacto">
+    <div class="info-contacto">
+      <p><img src="imagenes/cell.webp" alt="Teléfono" /> 315 5522048</p>
+    </div>
+    <div class="descarga">
+      <p>Disponible en:</p>
+      <ul>
+        <li><a href="#"> <img src="imagenes/apple_store.webp" alt="Apple Store" /></a></li>
+        <li><a href="#"> <img src="imagenes/play_store.webp" alt="Play Store" /></a></li>
+      </ul>
+    </div>
+    <div class="redes-sociales">
+      <p>Redes sociales:</p>
+      <ul>
+        <li><a href="#"><img src="imagenes/fb_icon-icons.webp" alt="Facebook" /></a></li>
+        <li><a href="#"><img src="imagenes/Instagram_New_icon-icons.webp" alt="Instagram" /></a></li>
+        <li><a href="#"><img src="imagenes/whatsapp_icon-icons.webp" alt="WhatsApp" /></a></li>
+      </ul>
+    </div>
+  </footer>
 </section>
+
 
 
 <!-- Sección Menú -->
